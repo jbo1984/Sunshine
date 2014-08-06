@@ -1,19 +1,9 @@
 package com.bollinger.justin.sunshine;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -24,7 +14,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new ForecastFragment())
                     .commit();
         }
     }
@@ -33,7 +23,8 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main,menu);
+        //getMenuInflater().inflate(R.menu.forecastfragment, menu);
         return true;
     }
 
@@ -52,6 +43,7 @@ public class MainActivity extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
+    /*
     public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {
@@ -78,5 +70,5 @@ public class MainActivity extends Activity {
 
             return rootView;
         }
-    }
+    }*/
 }
